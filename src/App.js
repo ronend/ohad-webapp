@@ -4,6 +4,7 @@ import './App.css';
 import HomePage from './components/HomePage';
 import ServicesPage from './components/ServicesPage';
 import ShowreelPage from './components/ShowreelPage';
+import ServiceDetailPage from './components/ServiceDetailPage';
 
 function NavBar() {
   const location = useLocation();
@@ -37,6 +38,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/services" element={<ServicesPage />} />
+          <Route path="/services/:id" element={<ServiceDetailPage />} />
           <Route path="/showreel" element={<ShowreelPage />} />
         </Routes>
       </div>

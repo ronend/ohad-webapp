@@ -1,5 +1,6 @@
 export const individualServices = [
   {
+    id: 1,
     title: "Video Essay Editing",
     description: "Transform your ideas into compelling video essays. Our expert editors will help structure your content, add engaging visuals, and polish your narrative for maximum impact.",
     price: "Starting at $150 per video",
@@ -27,6 +28,7 @@ export const individualServices = [
 
 export const bundleServices = [
   {
+    id: 5,
     title: "Video Essay Bundle",
     description: "Get everything you need for a successful video essay. This bundle includes: Thumbnail creation, Catchy title crafting, Engaging description writing, SEO-optimized tags, Full video editing and post-production",
     price: "$250 (Save $30)",

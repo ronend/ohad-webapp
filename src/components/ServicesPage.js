@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './ServicesPage.css'; // We'll create this CSS file for styling
 import { individualServices, bundleServices } from '../data/ServicesData';
 
-function ServiceCard({ title, description, price, imageUrl }) {
+function ServiceCard({ id, title, description, price, imageUrl }) {
   return (
-    <div className="service-card">
+    <Link to={`/services/${id}`} className="service-card">
       <div className="card-image">
         <img src={imageUrl} alt={title} />
       </div>
@@ -13,7 +14,7 @@ function ServiceCard({ title, description, price, imageUrl }) {
         <p>{description}</p>
         <p className="price">{price}</p>
       </div>
-    </div>
+    </Link>
   );
 }
 

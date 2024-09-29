@@ -50,6 +50,7 @@
   flex-direction: column;
   transition: all 0.3s ease; /* Add transition for smooth animation */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  text-decoration: none; /* Add this line to remove the underline */
 }
 
 .service-card:hover {
@@ -99,6 +100,7 @@
   font-size: 1.2em;
   color: #fff;
   transition: color 0.3s ease; /* Add transition for smooth animation */
+  text-decoration: none; /* Add this line to ensure the title is not underlined */
 }
 
 .service-card:hover h3 {
@@ -109,6 +111,7 @@
   margin-bottom: 10px;
   font-size: 0.9em;
   color: #b3b3b3;
+  text-decoration: none; /* Add this line to ensure paragraphs are not underlined */
 }
 
 .price {
@@ -116,6 +119,7 @@
   color: #ff9f43;
   margin-top: auto;
   transition: all 0.3s ease; /* Add transition for smooth animation */
+  text-decoration: none; /* Add this line to ensure the price is not underlined */
 }
 
 .service-card:hover .price {

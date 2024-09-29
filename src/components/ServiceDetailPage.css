@@ -1,0 +1,54 @@
+.ServiceDetailPage {
+  background-color: #1e2329;
+  color: white;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.back-button {
+  color: #ff9f43;
+  text-decoration: none;
+  font-size: 18px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.image-carousel {
+  margin-bottom: 20px;
+}
+
+.image-carousel img {
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+.price {
+  font-weight: bold;
+  color: #ff9f43;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.message-button {
+  background-color: #ff9f43;
+  color: #1e2329;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.message-button:hover {
+  background-color: #ffb973;
+}
