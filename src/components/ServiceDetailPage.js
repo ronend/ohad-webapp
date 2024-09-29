@@ -16,7 +16,7 @@ function ServiceDetailPage() {
   }, [id]);
 
   const copyToClipboard = () => {
-    navigator.clipboard.writeText("duacky").then(() => {
+    navigator.clipboard.writeText("Duacky").then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     });
@@ -42,8 +42,8 @@ function ServiceDetailPage() {
 
   return (
     <div className="ServiceDetailPage">
-      <Link to="/services" className="back-button">← Back to services</Link>
       <div className="service-detail-content">
+        <Link to="/services" className="back-button">← Back to services</Link>
         <div className="image-carousel">
           <img src={service.images[currentImageIndex]} alt={service.title} />
           <button onClick={prevImage} className="carousel-button prev">&#10094;</button>

@@ -9,13 +9,15 @@
   color: #ff9f43;
   text-decoration: none;
   font-size: 18px;
-  margin-bottom: 20px;
-  display: inline-block;
+  margin-bottom: 10px;
+  display: block; /* Change to block to take full width */
+  text-align: left; /* Align text to the left */
 }
 
 .service-detail-content {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px; /* Add padding to the content container */
 }
 
 .image-carousel {
@@ -57,7 +59,6 @@
 
 .service-info {
   text-align: left;
-  padding: 0 20px;
 }
 
 h1 {
