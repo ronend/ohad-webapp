@@ -9,19 +9,22 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/services">Services</Link>
-            </li>
-            <li>
-              <Link to="/showreel">Showreel</Link>
-            </li>
-          </ul>
-        </nav>
+        <header>
+          <nav>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/services">Services</Link>
+              </li>
+              <li>
+                <Link to="/showreel">Showreel</Link>
+              </li>
+            </ul>
+          </nav>
+          <h1 className="site-title">Video Editing Pro</h1>
+        </header>
 
         <Routes>
           <Route path="/" element={<HomePage />} />
