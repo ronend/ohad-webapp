@@ -8,8 +8,8 @@ function ShowreelPage() {
       <div className="video-container">
         {/* Replace the src with your actual showreel video URL */}
         <iframe 
-          width="560" 
-          height="315" 
+          width="1210" 
+          height="650" 
           src="https://www.youtube.com/embed/your-video-id" 
           title="Showreel" 
           frameBorder="0" 
