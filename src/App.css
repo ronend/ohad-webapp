@@ -78,6 +78,11 @@ nav ul li a:hover {
   color: #ff9f43;
 }
 
+nav ul li a.active {
+  font-weight: bold;
+  color: #ff9f43;
+}
+
 .site-title {
   color: white;
   font-size: 24px;

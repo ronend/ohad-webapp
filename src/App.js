@@ -1,28 +1,36 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, NavLink, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 import HomePage from './components/HomePage';
 import ServicesPage from './components/ServicesPage';
 import ShowreelPage from './components/ShowreelPage';
+
+function NavBar() {
+  const location = useLocation();
+
+  return (
+    <nav>
+      <ul>
+        <li>
+          <NavLink to="/" className={location.pathname === "/" ? "active" : ""}>Home</NavLink>
+        </li>
+        <li>
+          <NavLink to="/services" className={location.pathname === "/services" ? "active" : ""}>Services</NavLink>
+        </li>
+        <li>
+          <NavLink to="/showreel" className={location.pathname === "/showreel" ? "active" : ""}>Showreel</NavLink>
+        </li>
+      </ul>
+    </nav>
+  );
+}
 
 function App() {
   return (
     <Router>
       <div className="App">
         <header>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/services">Services</Link>
-              </li>
-              <li>
-                <Link to="/showreel">Showreel</Link>
-              </li>
-            </ul>
-          </nav>
+          <NavBar />
           <h1 className="site-title">Video Editing Pro</h1>
         </header>
 
