@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import './ServicesPage.css'; // We'll create this CSS file for styling
 import { individualServices, bundleServices } from '../data/ServicesData';
 
-function ServiceCard({ id, title, description, price, imageUrl }) {
+function ServiceCard({ id, title, description, price, images }) {
   return (
     <Link to={`/services/${id}`} className="service-card">
       <div className="card-image">
-        <img src={imageUrl} alt={title} />
+        <img src={images[0]} alt={title} />
       </div>
       <div className="card-content">
         <h3>{title}</h3>
@@ -38,8 +38,8 @@ function ServicesPage() {
         </button>
       </div>
       <div className="service-grid">
-        {(activeCategory === 'individual' ? individualServices : bundleServices).map((service, index) => (
-          <ServiceCard key={index} {...service} />
+        {(activeCategory === 'individual' ? individualServices : bundleServices).map((service) => (
+          <ServiceCard key={service.id} {...service} />
         ))}
       </div>
     </div>
