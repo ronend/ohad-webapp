@@ -8,6 +8,7 @@ function ServiceDetailPage() {
   const [service, setService] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [copied, setCopied] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
     const allServices = [...individualServices, ...bundleServices];
@@ -38,6 +39,14 @@ function ServiceDetailPage() {
     }
   };
 
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
   if (!service) return <div>Loading...</div>;
 
   return (
@@ -45,7 +54,11 @@ function ServiceDetailPage() {
       <div className="service-detail-content">
         <Link to="/services" className="back-button">← Back to services</Link>
         <div className="image-carousel">
-          <img src={service.images[currentImageIndex]} alt={service.title} />
+          <img 
+            src={service.images[currentImageIndex]} 
+            alt={service.title} 
+            onClick={openModal}
+          />
           <button onClick={prevImage} className="carousel-button prev">&#10094;</button>
           <button onClick={nextImage} className="carousel-button next">&#10095;</button>
         </div>
@@ -58,6 +71,14 @@ function ServiceDetailPage() {
           </button>
         </div>
       </div>
+      {modalOpen && (
+        <div className="modal" onClick={closeModal}>
+          <div className="modal-content" onClick={e => e.stopPropagation()}>
+            <img src={service.images[currentImageIndex]} alt={service.title} />
+            <button className="close-button" onClick={closeModal}>&times;</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
