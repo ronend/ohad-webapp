@@ -22,7 +22,7 @@ function NavBar() {
           </ul>
         </div>
         <div className="navbar-section center">
-          <div className="navbar-brand">Video Editing Pro</div>
+          <div className="navbar-brand">Creative Cuts</div>
         </div>
         <div className="navbar-section right"></div>
       </nav>

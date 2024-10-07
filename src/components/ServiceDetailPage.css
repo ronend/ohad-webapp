@@ -103,6 +103,7 @@ p {
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
   border-radius: 10px; /* Add this line for rounded corners */
+  margin-top: 20px; /* Add this line to create space above the button */
 }
 
 .message-button:hover {
@@ -175,4 +176,37 @@ p {
   color: #bbb;
   text-decoration: none;
   cursor: pointer;
+}
+
+.bundle-details {
+  margin-top: 20px;
+  background-color: #2c3137;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 0px; /* Add this line to create space below the bundle details */
+}
+
+.bundle-details h2 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #ffffff; /* Changed to white */
+}
+
+.bundle-details ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.bundle-details li {
+  margin-bottom: 10px;
+}
+
+.bundle-details a {
+  color: #ff9f43; /* Orange */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.bundle-details a:hover {
+  color: #ffb973; /* Lighter orange on hover */
 }

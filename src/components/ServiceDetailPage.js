@@ -66,6 +66,18 @@ function ServiceDetailPage() {
           <h1>{service.title}</h1>
           <p>{service.description}</p>
           <p className="price">{service.price}</p>
+          {service.bundleDetails && (
+            <div className="bundle-details">
+              <h2>This bundle includes:</h2>
+              <ul>
+                {service.bundleDetails.map((item, index) => (
+                  <li key={index}>
+                    <Link to={item.link}>{item.name}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
           <button onClick={copyToClipboard} className="message-button">
             {copied ? "Copied!" : "Message Me On Discord"}
           </button>

@@ -52,7 +52,7 @@ function HomePage() {
         </video>
         <div className="hero-content">
           <h1>Professional Video Editing Services</h1>
-          <p>Transform your raw footage into captivating content</p>
+          <p>Send the script and voiceover, we'll do the rest.</p>
           <Link to="/showreel" className="cta-button">Watch Our Showreel</Link>
         </div>
         <div className="scroll-down" onClick={scrollToContent}>
