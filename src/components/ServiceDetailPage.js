@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { individualServices, bundleServices } from '../data/ServicesData';
 import './ServiceDetailPage.css';
 
@@ -9,6 +9,7 @@ function ServiceDetailPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [copied, setCopied] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const allServices = [...individualServices, ...bundleServices];
@@ -47,12 +48,16 @@ function ServiceDetailPage() {
     setModalOpen(false);
   };
 
+  const handleBack = () => {
+    navigate('/services');
+  };
+
   if (!service) return <div>Loading...</div>;
 
   return (
     <div className="ServiceDetailPage">
       <div className="service-detail-content">
-        <Link to="/services" className="back-button">← Back to services</Link>
+        <button onClick={handleBack} className="back-button">← Back to services</button>
         <div className="image-carousel">
           <img 
             src={service.images[currentImageIndex]} 

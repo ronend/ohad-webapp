@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './ServicesPage.css'; // We'll create this CSS file for styling
 import { individualServices, bundleServices } from '../data/ServicesData';
 
@@ -19,20 +19,32 @@ function ServiceCard({ id, title, description, price, images }) {
 }
 
 function ServicesPage() {
-  const [activeCategory, setActiveCategory] = useState('individual');
+  const [activeCategory, setActiveCategory] = useState(() => {
+    return localStorage.getItem('activeCategory') || 'individual';
+  });
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    localStorage.setItem('activeCategory', activeCategory);
+  }, [activeCategory]);
+
+  const handleCategoryChange = (category) => {
+    setActiveCategory(category);
+    navigate('/services', { replace: true });
+  };
 
   return (
     <div className="ServicesPage">
       <div className="category-switch">
         <button 
           className={activeCategory === 'individual' ? 'active' : ''}
-          onClick={() => setActiveCategory('individual')}
+          onClick={() => handleCategoryChange('individual')}
         >
           Individual
         </button>
         <button 
           className={activeCategory === 'bundles' ? 'active' : ''}
-          onClick={() => setActiveCategory('bundles')}
+          onClick={() => handleCategoryChange('bundles')}
         >
           Bundles
         </button>
