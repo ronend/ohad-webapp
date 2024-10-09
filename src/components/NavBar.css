@@ -71,6 +71,33 @@
   font-weight: bold;
 }
 
+.search-form {
+  display: flex;
+  align-items: center;
+}
+
+.search-form input {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  font-size: 14px;
+}
+
+.search-form button {
+  padding: 5px 10px;
+  background-color: #ff9f43;
+  color: #1e2329;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.search-form button:hover {
+  background-color: #ffb973;
+}
+
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;

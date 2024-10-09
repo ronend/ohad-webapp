@@ -52,6 +52,10 @@ function ServiceDetailPage() {
     navigate('/services');
   };
 
+  const renderDescription = (description) => {
+    return { __html: description };
+  };
+
   if (!service) return <div>Loading...</div>;
 
   return (
@@ -69,7 +73,7 @@ function ServiceDetailPage() {
         </div>
         <div className="service-info">
           <h1>{service.title}</h1>
-          <p>{service.description}</p>
+          <p dangerouslySetInnerHTML={renderDescription(service.displayDescription || service.description)} />
           <p className="price">{service.price}</p>
           {service.bundleDetails && (
             <div className="bundle-details">

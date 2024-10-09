@@ -24,9 +24,8 @@ export const individualServices = [
   {
     id: 3,
     title: "Cinematic Minecraft Shots",
-    description: (
-      <><strong>Sold Out</strong> - Elevate your Minecraft content with breathtaking cinematic shots to create stunning visuals within your story, perfect for intros, transitions, showcasing stuff, and making your video look like a movie.</>
-    ),
+    description: "Sold Out - Elevate your Minecraft content with breathtaking cinematic shots to create stunning visuals within your story, perfect for intros, transitions, showcasing stuff, and making your video look like a movie.",
+    displayDescription: "<strong>Sold Out</strong> - Elevate your Minecraft content with breathtaking cinematic shots to create stunning visuals within your story, perfect for intros, transitions, showcasing stuff, and making your video look like a movie.",
     price: "$20 per hour of work",
     images: [
       "https://placehold.co/600x400?text=Minecraft+1",

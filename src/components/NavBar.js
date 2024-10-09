@@ -1,9 +1,16 @@
-import React from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import React, { useState } from 'react';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import './NavBar.css';
 
 function NavBar() {
   const location = useLocation();
+  const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    navigate(`/search?q=${encodeURIComponent(searchTerm)}`);
+  };
 
   return (
     <div className="navbar-wrapper">
@@ -24,7 +31,17 @@ function NavBar() {
         <div className="navbar-section center">
           <div className="navbar-brand">Creative Cuts</div>
         </div>
-        <div className="navbar-section right"></div>
+        <div className="navbar-section right">
+          <form onSubmit={handleSearch} className="search-form">
+            <input
+              type="text"
+              placeholder="Search services..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+            <button type="submit">Search</button>
+          </form>
+        </div>
       </nav>
     </div>
   );
