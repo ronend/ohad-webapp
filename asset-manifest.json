@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/ohad-webapp/static/css/main.d71c6bcf.css",
+    "main.js": "/ohad-webapp/static/js/main.e6f6427c.js",
+    "static/js/453.ade89c24.chunk.js": "/ohad-webapp/static/js/453.ade89c24.chunk.js",
+    "static/media/1536315-hd_1920_1080_30fps.mp4": "/ohad-webapp/static/media/1536315-hd_1920_1080_30fps.2832681845e0b7977ff5.mp4",
+    "index.html": "/ohad-webapp/index.html",
+    "main.d71c6bcf.css.map": "/ohad-webapp/static/css/main.d71c6bcf.css.map",
+    "main.e6f6427c.js.map": "/ohad-webapp/static/js/main.e6f6427c.js.map",
+    "453.ade89c24.chunk.js.map": "/ohad-webapp/static/js/453.ade89c24.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d71c6bcf.css",
+    "static/js/main.e6f6427c.js"
+  ]
+}
