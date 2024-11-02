@@ -331,7 +331,6 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  flex-direction: row-reverse; /* This will put the icon on the left */
 }
 
 .name-with-icon h3 {

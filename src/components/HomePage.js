@@ -48,6 +48,19 @@ function HomePage() {
 
   const toggleFaq = (id) => {
     setExpandedFaq(expandedFaq === id ? null : id);
+    
+    if (expandedFaq !== id) {
+      const isLastFaq = id === faqData[faqData.length - 1].id;
+      
+      if (isLastFaq) {
+        setTimeout(() => {
+          window.scrollTo({
+            top: document.documentElement.scrollHeight,
+            behavior: 'smooth'
+          });
+        }, 100);
+      }
+    }
   };
 
   return (
@@ -101,8 +114,8 @@ function HomePage() {
               </div>
               <div className="client-info">
                 <div className="name-with-icon">
+                  {client.showYoutubeIcon && <i className="fab fa-youtube"></i>}
                   <h3>{client.name}</h3>
-                  <i className="fab fa-youtube"></i>
                 </div>
                 <p className="subscriber-count">{client.subscribers}</p>
                 <p className="view-count">{client.views}</p>
@@ -129,7 +142,8 @@ function HomePage() {
         <div className="faq-grid">
           {faqData.map((faq) => (
             <div 
-              key={faq.id} 
+              key={faq.id}
+              id={`faq-${faq.id}`}
               className={`faq-card ${expandedFaq === faq.id ? 'expanded' : ''}`}
               onClick={() => toggleFaq(faq.id)}
             >
