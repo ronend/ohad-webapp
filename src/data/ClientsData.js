@@ -1,23 +1,10 @@
 export const clientsData = [
   {
     id: 1,
-    name: "Dream",
-    subscribers: "25M+ Subscribers",
-    views: "10B+ Views",
-    image: "https://placehold.co/200x200"
+    name: "Plastic Scot",
+    subscribers: "200K+ Subscribers",
+    views: "50M+ Views",
+    image: "https://yt3.googleusercontent.com/_y_jtnrjd2nErLMmmyFZFoRDMu85J4uKzOzLdzbT3SaxzcdNU2NxnA7vFPBvIwneEn9PcS-8uA=s160-c-k-c0x00ffffff-no-rj",
+    link: "https://www.youtube.com/c/PlasticScot"
   },
-  {
-    id: 2,
-    name: "TommyInnit",
-    subscribers: "12M+ Subscribers",
-    views: "5B+ Views",
-    image: "https://placehold.co/200x200"
-  },
-  {
-    id: 3,
-    name: "Technoblade",
-    subscribers: "15M+ Subscribers",
-    views: "7B+ Views",
-    image: "https://placehold.co/200x200"
-  }
 ]; 

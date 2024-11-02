@@ -50,7 +50,7 @@ export const bundleServices = [
   {
     id: 5,
     title: "Video Essay Bundle",
-    description: "Get everything you need for a successful video essay. This bundle includes: 3 Thumbnail, 3 Titles, An SEO-optimized description, SEO-optimized tags, & Full video editing",
+    description: "Get everything you need for a successful video essay. This bundle includes: 3 Thumbnail options, 3 title options, An algorithm-optimized description, algorithm-optimized tags, & Full video editing",
     price: "Starting at $20 + $20 per hour of editing (Save $15)",
     images: [
       "https://placehold.co/600x400?text=Video+Essay+Bundle+1",
@@ -66,7 +66,7 @@ export const bundleServices = [
   {
     id: 6,
     title: "Full Video Details",
-    description: "Optimize your video's presentation and discoverability. This bundle includes: Eye-catching thumbnail, Attention-grabbing title, Compelling description, SEO-optimized tags and keywords",
+    description: "Optimize your video's presentation and discoverability. This bundle includes: Eye-catching thumbnail, Attention-grabbing title, Compelling description, & algorithm-optimized tags and keywords",
     price: "$25 (Save $10)",
     images: [
       "https://placehold.co/600x400?text=Full+Video+Details+1",

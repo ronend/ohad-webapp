@@ -1,11 +1,13 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './HomePage.css';
 import placeholderVideo from '../assets/1536315-hd_1920_1080_30fps.mp4'; // You'll need to add this video to your assets
 import { clientsData } from '../data/ClientsData';
+import { faqData } from '../data/FAQData';
 
 function HomePage() {
   const animatedSections = useRef([]);
+  const [expandedFaq, setExpandedFaq] = useState(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -42,6 +44,10 @@ function HomePage() {
       top: window.innerHeight,
       behavior: 'smooth'
     });
+  };
+
+  const toggleFaq = (id) => {
+    setExpandedFaq(expandedFaq === id ? null : id);
   };
 
   return (
@@ -83,31 +89,60 @@ function HomePage() {
         <h2>Worked With</h2>
         <div className="clients-grid">
           {clientsData.map((client) => (
-            <div key={client.id} className="client-card">
+            <a 
+              key={client.id} 
+              className="client-card"
+              href={client.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <div className="profile-image">
                 <img src={client.image} alt={client.name} />
               </div>
               <div className="client-info">
-                <h3>{client.name}</h3>
-                <p className="subscriber-count">{client.subscribers}</p>
-                <p className="view-count">{client.views}</p>
-                <div className="youtube-icon">
+                <div className="name-with-icon">
+                  <h3>{client.name}</h3>
                   <i className="fab fa-youtube"></i>
                 </div>
+                <p className="subscriber-count">{client.subscribers}</p>
+                <p className="view-count">{client.views}</p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </section>
 
       <section ref={addToRefs} className="about">
-        <h2>About Us</h2>
-        <p>We are a team of passionate video editors dedicated to helping content creators shine. With years of experience and a keen eye for detail, we transform raw footage into engaging, professional-quality videos that captivate audiences.</p>
+        <div className="about-content">
+          <h2>About Us</h2>
+          <p>We are a team of passionate video editors dedicated to helping content creators shine. With years of experience and a keen eye for detail, we transform raw footage into engaging, professional-quality videos that captivate audiences.</p>
+        </div>
       </section>
 
       <section ref={addToRefs} className="cta">
         <h2>Ready to elevate your content?</h2>
         <Link to="/services" className="cta-button">Get Started</Link>
+      </section>
+
+      <section ref={addToRefs} className="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div className="faq-grid">
+          {faqData.map((faq) => (
+            <div 
+              key={faq.id} 
+              className={`faq-card ${expandedFaq === faq.id ? 'expanded' : ''}`}
+              onClick={() => toggleFaq(faq.id)}
+            >
+              <div className="faq-question">
+                <h3>{faq.question}</h3>
+                <span className="faq-arrow">▼</span>
+              </div>
+              <div className="faq-answer">
+                <p>{faq.answer}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
     </div>
   );
