@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { individualServices, bundleServices } from '../data/ServicesData';
-import { commonWords } from '../data/commonwords';
+import { commonWords } from '../data/commonWords';
 import './SearchPage.css';
 import './ServicesPage.css'; // Import the ServicesPage styles
 

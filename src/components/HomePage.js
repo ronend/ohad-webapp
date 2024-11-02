@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './HomePage.css';
 import placeholderVideo from '../assets/1536315-hd_1920_1080_30fps.mp4'; // You'll need to add this video to your assets
+import { clientsData } from '../data/ClientsData';
 
 function HomePage() {
   const animatedSections = useRef([]);
@@ -79,10 +80,23 @@ function HomePage() {
       </section>
 
       <section ref={addToRefs} className="testimonials">
-        <h2>What Our Clients Say</h2>
-        <div className="testimonial">
-          <p>"The team's attention to detail and creativity transformed our footage into a masterpiece."</p>
-          <cite>- John Doe, YouTuber</cite>
+        <h2>Worked With</h2>
+        <div className="clients-grid">
+          {clientsData.map((client) => (
+            <div key={client.id} className="client-card">
+              <div className="profile-image">
+                <img src={client.image} alt={client.name} />
+              </div>
+              <div className="client-info">
+                <h3>{client.name}</h3>
+                <p className="subscriber-count">{client.subscribers}</p>
+                <p className="view-count">{client.views}</p>
+                <div className="youtube-icon">
+                  <i className="fab fa-youtube"></i>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
